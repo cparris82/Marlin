@@ -667,9 +667,9 @@
     #define DEFAULT_Ki_LIST {   1.08,   1.08 }
     #define DEFAULT_Kd_LIST { 114.00, 114.00 }
   #else
-    #define DEFAULT_Kp  21.73 // BTT_E3_V3 marlin example
-    #define DEFAULT_Ki   1.54 // BTT_E3_V3 marlin example
-    #define DEFAULT_Kd  76.55 // BTT_E3_V3 marlin example
+    #define DEFAULT_Kp  34.16 // BTT_E3_V3 tuned value
+    #define DEFAULT_Ki   4.11 // BTT_E3_V3 tuned value
+    #define DEFAULT_Kd  71.05 // BTT_E3_V3 tuned value
   #endif
 #endif
 
@@ -752,9 +752,9 @@
 
   // 120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   // from FOPDT model - kp=.39 Tp=405 Tdead=66, Tc set to 79.2, aggressive factor of .15 (vs .1, 1, 10)
-  #define DEFAULT_bedKp 41.78 // BTT_E3_V3 marlin example
-  #define DEFAULT_bedKi 7.32 // BTT_E3_V3 marlin example
-  #define DEFAULT_bedKd 158.93 // BTT_E3_V3 marlin example
+  #define DEFAULT_bedKp 53.45 // BTT_E3_V3 tuned value
+  #define DEFAULT_bedKi 9.68 // BTT_E3_V3 tuned value
+  #define DEFAULT_bedKd 196.69 // BTT_E3_V3 tuned value
 
   // FIND YOUR OWN: "M303 E-1 C8 S90" to run autotune on the bed at 90 degreesC for 8 cycles.
 #endif // PIDTEMPBED
@@ -1168,7 +1168,7 @@
  * Override with M92
  *                                      X, Y, Z [, I [, J [, K...]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 93 } // BTT_E3_V3 consol guide
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 94.42 } // BTT_E3_V3 previous settings
 
 /**
  * Default Max Feed Rate (linear=mm/s, rotational=°/s)
@@ -1483,7 +1483,7 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { -25.75, +0.04, +0.00 } // BTT_E3_V3 consol guide
+#define NOZZLE_TO_PROBE_OFFSET { -44, -6, +0.00 } // BTT_E3_V3 measured values
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
@@ -1694,15 +1694,15 @@
 // @section geometry
 
 // The size of the printable area
-#define X_BED_SIZE 235 // BTT_E3_V3 consol guide
-#define Y_BED_SIZE 235 // BTT_E3_V3 consol guide
+#define X_BED_SIZE 234 // BTT_E3_V3 measured value
+#define Y_BED_SIZE 234 // BTT_E3_V3 measured value
 
 // Travel limits (linear=mm, rotational=°) after homing, corresponding to endstop positions.
-#define X_MIN_POS 0
-#define Y_MIN_POS 0
+#define X_MIN_POS +2 // BTT_E3_V3 measured value
+#define Y_MIN_POS -6 // BTT_E3_V3 measured value
 #define Z_MIN_POS 0
-#define X_MAX_POS X_BED_SIZE
-#define Y_MAX_POS Y_BED_SIZE
+#define X_MAX_POS 242 // BTT_E3_V3 measured value
+#define Y_MAX_POS 234 // BTT_E3_V3 measured value
 #define Z_MAX_POS 250 // BTT_E3_V3 consol guide
 //#define I_MIN_POS 0
 //#define I_MAX_POS 50
